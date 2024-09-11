@@ -70,10 +70,10 @@ export default function SignatureCards() {
               <p className="text-gray-300 mb-4">
                 Experience the sublime essence of {activeElixir}, a masterpiece
                 of hydration crafted to awaken your senses and nourish your
-                soul. This extraordinary elixir is more than mere water; it's a
-                journey through the purest elements of nature, enhanced by our
-                proprietary process to deliver unparalleled refreshment and
-                vitality.
+                soul. This extraordinary elixir is more than mere water;
+                it&apos;s a journey through the purest elements of nature,
+                enhanced by our proprietary process to deliver unparalleled
+                refreshment and vitality.
               </p>
               <motion.button
                 className="bg-teal-400 text-gray-900 px-6 py-2 rounded-full text-lg font-semibold hover:bg-teal-300 transition-colors duration-300"
