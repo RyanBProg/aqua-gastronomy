@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   AnimatePresence,
   motion,
@@ -25,20 +26,22 @@ export default function Header() {
           ),
         }}>
         <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <motion.h1
-            className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}>
-            AquaGastronomy
-          </motion.h1>
+          <Link href="/">
+            <motion.h1
+              className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
+              AquaGastronomy
+            </motion.h1>
+          </Link>
           <div className="hidden md:flex space-x-8">
-            {["Experience", "Menu", "Reservations", "About"].map(
+            {["experience", "menu", "reservations", "about"].map(
               (item, index) => (
                 <motion.a
                   key={item}
-                  href="#"
-                  className="text-lg hover:text-teal-300 transition-colors duration-300"
+                  href={`/${item}`}
+                  className="capitalize text-lg hover:text-teal-300 transition-colors duration-300"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}>
