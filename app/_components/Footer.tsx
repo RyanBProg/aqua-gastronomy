@@ -11,19 +11,19 @@ export default function Footer() {
           <Link
             key="Privacy"
             href="#"
-            className="hover:text-teal-300 transition-colors duration-300">
+            className="hover:text-blue-300 transition-colors duration-300">
             Privacy
           </Link>
           <Link
             key="Terms"
             href="#"
-            className="hover:text-teal-300 transition-colors duration-300">
+            className="hover:text-blue-300 transition-colors duration-300">
             Terms
           </Link>
           <Link
             key="Contact"
             href="/contact"
-            className="hover:text-teal-300 transition-colors duration-300">
+            className="hover:text-blue-300 transition-colors duration-300">
             Contact
           </Link>
         </div>

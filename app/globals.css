@@ -24,4 +24,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .contentContainer {
+    @apply container px-5 mx-auto;
+  }
 }

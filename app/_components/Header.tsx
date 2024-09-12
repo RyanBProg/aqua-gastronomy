@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+
 import {
   AnimatePresence,
   motion,
@@ -22,10 +23,10 @@ export default function Header() {
           backgroundColor: useTransform(
             scrollY,
             [0, 100],
-            ["rgba(0,0,0,0)", "rgba(0,0,0,0.8)"]
+            ["rgba(0,0,0,0)", "rgba(0,0,0,0.5)"]
           ),
         }}>
-        <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
+        <nav className="contentContainer py-6 flex justify-between items-center">
           <Link href="/">
             <motion.h1
               className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300"
@@ -41,7 +42,7 @@ export default function Header() {
                 <motion.a
                   key={item}
                   href={`/${item}`}
-                  className="capitalize text-lg hover:text-teal-300 transition-colors duration-300"
+                  className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}>
@@ -51,7 +52,7 @@ export default function Header() {
             )}
           </div>
           <motion.button
-            className="md:hidden text-teal-300"
+            className="md:hidden text-white hover:text-blue-300"
             onClick={() => setIsMenuOpen(true)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}>
@@ -69,17 +70,17 @@ export default function Header() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}>
             <button
-              className="absolute top-6 right-6 text-teal-300"
+              className="absolute top-6 right-6 text-white hover:text-blue-300"
               onClick={() => setIsMenuOpen(false)}>
               <X size={24} />
             </button>
             <nav className="text-center">
-              {["Experience", "Menu", "Reservations", "About"].map(
+              {["experience", "menu", "reservations", "about"].map(
                 (item, index) => (
                   <motion.a
                     key={item}
-                    href="#"
-                    className="block text-3xl mb-6 hover:text-teal-300 transition-colors duration-300"
+                    href={`/${item}`}
+                    className="capitalize block text-3xl mb-6 hover:text-blue-300 transition-colors duration-300"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}>
