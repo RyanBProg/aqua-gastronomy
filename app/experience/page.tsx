@@ -13,7 +13,7 @@ export default function page() {
           Awaken a Different Chakra of Your Aquatic Consciousness
         </h2>
         <p className="text-gray-300 max-w-[600px]">
-          Sip the ethereal "Celestial Raindrop," sourced from the clouds of a
+          Sip the ethereal Celestial Raindrop, sourced from the clouds of a
           sacred mountain, and feel the cool clarity of its message —
           tranquility, purity, and eternal flow.
         </p>

@@ -10,7 +10,7 @@ export default function page() {
         <h2 className="font-semibold">The Discovery of Water</h2>
         <p className="text-gray-300 max-w-[600px]">
           AquaGastronomy was founded by world-renowned hydrologist, philosopher,
-          and self-proclaimed "Water Whisperer" Jean-Pierre Eauclair.
+          and self-proclaimed Water Whisperer, Jean-Pierre Eauclair.
         </p>
         <p className="text-gray-300 max-w-[600px]">
           Jean-Pierre dedicated his life to studying water in all its states. He

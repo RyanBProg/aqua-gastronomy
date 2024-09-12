@@ -45,7 +45,7 @@ export default function SignatureCards() {
               Discover Our Signature Dishes
             </h3>
             <p className="italic text-gray-300">
-              Dining at AquaGastronomy is more than just a meal—it's an
+              Dining at AquaGastronomy is more than just a meal—it&apos;s an
               immersive experience.
             </p>
           </div>
