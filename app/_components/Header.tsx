@@ -26,7 +26,7 @@ export default function Header() {
             ["rgba(0,0,0,0)", "rgba(0,0,0,0.5)"]
           ),
         }}>
-        <nav className="contentContainer py-6 flex justify-between items-center">
+        <nav className="contentContainer py-4 flex justify-between items-center">
           <Link href="/">
             <motion.h1
               className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300"
