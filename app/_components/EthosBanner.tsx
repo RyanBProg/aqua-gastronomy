@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import GlassMorphCard from "./GlassMorphCard";
-import Section from "./Section";
-import Link from "next/link";
 
 export default function EthosBanner() {
   return (
