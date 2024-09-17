@@ -2,6 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "playfair";
+  src: url("/fonts/Playfair/Playfair-VariableFont_opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "playfair";
+  src: url("/fonts/Playfair/Playfair-VariableFont_opsz,wdth,wght-italic.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "source-sans";
+  src: url("/fonts/Source_Sans_3/SourceSans3-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "source-sans";
+  src: url("/fonts/Source_Sans_3/SourceSans3-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: "source-sans", serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "playfair", serif;
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .contentContainer {
+    @apply container px-5 mx-auto;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,15 +80,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .contentContainer {
-    @apply container px-5 mx-auto;
-  }
+  /* font-family: Arial, Helvetica, sans-serif; */
 }

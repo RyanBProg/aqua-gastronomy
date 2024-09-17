@@ -1,7 +1,9 @@
 export default function page() {
   return (
     <div className="contentContainer my-40">
-      <h1 className="text-4xl font-bold leading-tight">About</h1>
+      <h1 className="text-[10rem] text-white/20 font-bold leading-tight">
+        About
+      </h1>
       <h2 className="text-lg italic text-gray-300">
         The Visionary Behind AquaGastronomy
       </h2>
