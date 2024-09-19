@@ -38,7 +38,6 @@ export default function SignatureCards() {
   return (
     <>
       <Section className="relative">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10" />
         <div className="container mx-auto px-4 relative">
           <div className="mb-12">
             <h3 className="text-4xl font-bold mb-5">
@@ -55,18 +54,15 @@ export default function SignatureCards() {
                 key={dish.name}
                 className="text-center"
                 index={index}>
-                <motion.div
-                  className="h-40 w-40 lg:h-48 lg:w-48 mx-auto mb-6 rounded-full bg-blue-500 bg-opacity-30 flex items-center justify-center"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}>
+                <div className="h-40 w-40 lg:h-48 lg:w-48 mx-auto mb-6 rounded-full bg-blue-500 bg-opacity-30 flex items-center justify-center">
                   <Droplet size={64} className="text-blue-300" />
-                </motion.div>
+                </div>
                 <h4 className="text-2xl font-semibold mb-2 text-white">
                   {dish.name}
                 </h4>
                 <p className="text-gray-300">{dish.desc}</p>
                 <motion.button
-                  className="mt-4 bg-blue-500 text-gray-900 rounded-md px-6 py-2 text-lg font-semibold hover:bg-blue-400 transition-colors duration-300"
+                  className="mt-4 bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-6 py-2 text-lg font-semibold"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveDish(dish)}>
@@ -87,7 +83,7 @@ export default function SignatureCards() {
             exit={{ opacity: 0 }}>
             <GlassMorphCard className="max-w-2xl mx-4">
               <button
-                className="absolute top-4 right-4 text-white"
+                className="absolute top-4 right-4 text-white hover:text-neutral-400 transition-colors"
                 onClick={() => setActiveDish(null)}>
                 <X size={24} />
               </button>
@@ -97,7 +93,7 @@ export default function SignatureCards() {
               <p className="text-gray-300 mb-4">{activeDish.longDesc}</p>
               <Link href="/menu">
                 <motion.button
-                  className="bg-blue-500 text-gray-900 rounded-md px-6 py-2 text-lg font-semibold hover:bg-blue-400 transition-colors duration-300"
+                  className="bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-6 py-2 text-lg font-semibold"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}>
                   See Our Menu

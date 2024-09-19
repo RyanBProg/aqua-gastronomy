@@ -24,7 +24,7 @@ export default function Hero() {
       <motion.div
         className="text-center z-10 space-y-6"
         style={{ y: y2Spring, opacity: opacitySpring }}>
-        <h2 className="text-6xl font-bold mb-4 leading-tight">
+        <h2 className="text-7xl font-bold mb-4">
           Elevate Your
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
@@ -37,7 +37,7 @@ export default function Hero() {
         </p>
         <Link href="/reservations" className="inline-block">
           <motion.button
-            className="bg-blue-500 text-gray-900 rounded-md px-8 py-3 text-lg font-semibold hover:bg-blue-400 transition-colors duration-300"
+            className="bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-8 py-3 text-lg font-semibold"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}>
             Reserve Your Journey

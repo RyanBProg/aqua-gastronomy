@@ -29,11 +29,14 @@ export default function Header() {
         <nav className="contentContainer py-4 flex justify-between items-center">
           <Link href="/">
             <motion.h1
-              className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300"
+              className="text-3xl font-extrabold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}>
-              AquaGastronomy
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+                Aqua
+              </span>
+              Gastronomy
             </motion.h1>
           </Link>
           <div className="hidden md:flex space-x-8">
