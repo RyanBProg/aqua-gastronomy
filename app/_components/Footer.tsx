@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="flex justify-center space-x-6">
           <Link
             key="Privacy"
-            href="#"
+            href="/privacy"
             className="hover:text-blue-300 transition-colors duration-300">
             Privacy
           </Link>
           <Link
             key="Terms"
-            href="#"
+            href="/terms"
             className="hover:text-blue-300 transition-colors duration-300">
             Terms
           </Link>

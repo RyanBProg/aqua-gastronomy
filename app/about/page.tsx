@@ -1,7 +1,7 @@
 export default function page() {
   return (
     <div className="contentContainer my-40">
-      <h1 className="text-[10rem] text-white/20 font-bold leading-tight">
+      <h1 className="text-[6rem] text-white/20 font-bold leading-tight">
         About
       </h1>
       <h2 className="text-lg italic text-gray-300">
@@ -30,14 +30,24 @@ export default function page() {
       </section>
 
       <section className="my-10 grid gap-4">
-        <h2 className="font-semibold">Key Facts About Jean</h2>
-        <ul className="text-gray-300 max-w-[600px]">
-          <li>He sleeps upside down</li>
-          <li>Believes in eating without plates</li>
-          <li>Has trained his shadow to perform magic tricks</li>
-          <li>Was voted 2002 Gibraltar&apos;s hottest man</li>
-          <li>Drinks only the tears of his enemies</li>
-        </ul>
+        <h2 className="font-semibold">
+          Awaken a Different Chakra of Your Aquatic Consciousness
+        </h2>
+        <p className="text-gray-300 max-w-[600px]">
+          Sip the ethereal Celestial Raindrop, sourced from the clouds of a
+          sacred mountain, and feel the cool clarity of its message —
+          tranquility, purity, and eternal flow.
+        </p>
+        <h2 className="font-semibold">Enter The Temple of Aqua</h2>
+        <p className="text-gray-300 max-w-[600px]">
+          A restaurant that carries the vibrations of the Earth&apos;s deepest
+          secrets, our elixirs are a gateway to higher realms of consciousness.
+        </p>
+        <h2 className="font-semibold">The Art of Pairing Nothing</h2>
+        <p className="text-gray-300 max-w-[600px]">
+          Paired perfectly with nothing at all, our water dishes cleanse the
+          palate
+        </p>
       </section>
 
       <section>

@@ -6,10 +6,10 @@ import EthosBanner from "./_components/EthosBanner";
 
 export default function page() {
   return (
-    <main>
+    <>
       <Hero />
       <SignatureCards />
       <EthosBanner />
-    </main>
+    </>
   );
 }

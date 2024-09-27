@@ -1,7 +1,9 @@
 export default function page() {
   return (
     <div className="contentContainer my-40">
-      <h1 className="text-4xl font-bold leading-tight">Our Menu</h1>
+      <h1 className="text-[6rem] text-white/20 font-bold leading-tight">
+        Our Menu
+      </h1>
       <h2 className="text-lg italic text-gray-300">A Journey Through Water</h2>
       <p className="mt-10 mb-20 max-w-[600px]">
         Embark on a culinary journey where water is the hero. Our menu is

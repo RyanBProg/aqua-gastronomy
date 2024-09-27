@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import DarkModeToggle from "./DarkModeToggle";
 
 import {
   AnimatePresence,
@@ -26,7 +27,7 @@ export default function Header() {
             ["rgba(0,0,0,0)", "rgba(0,0,0,0.5)"]
           ),
         }}>
-        <nav className="contentContainer py-4 flex justify-between items-center">
+        <nav className="contentContainer py-4 flex justify-between items-center md:gap-10">
           <Link href="/">
             <motion.h1
               className="text-3xl font-extrabold"
@@ -39,20 +40,39 @@ export default function Header() {
               Gastronomy
             </motion.h1>
           </Link>
-          <div className="hidden md:flex space-x-8">
-            {["experience", "menu", "reservations", "about"].map(
-              (item, index) => (
-                <motion.a
-                  key={item}
-                  href={`/${item}`}
-                  className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}>
-                  {item}
-                </motion.a>
-              )
-            )}
+          <div className="hidden md:flex md:justify-end space-x-8 md:flex-grow">
+            <motion.a
+              href="/"
+              className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
+              Home
+            </motion.a>
+            <motion.a
+              href="/menu"
+              className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
+              Menu
+            </motion.a>
+            <motion.a
+              href="/reservations"
+              className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
+              Reservations
+            </motion.a>
+            <motion.a
+              href="/about"
+              className="capitalize text-lg hover:text-blue-300 transition-colors duration-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}>
+              About
+            </motion.a>
           </div>
           <motion.button
             className="md:hidden text-white hover:text-blue-300"
@@ -61,6 +81,13 @@ export default function Header() {
             whileTap={{ scale: 0.9 }}>
             <Menu size={24} />
           </motion.button>
+          <motion.div
+            className="hidden md:block md:flex-shrink"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}>
+            <DarkModeToggle />
+          </motion.div>
         </nav>
       </motion.header>
 
@@ -73,7 +100,7 @@ export default function Header() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}>
             <button
-              className="absolute top-6 right-6 text-white hover:text-blue-300"
+              className="absolute top-8 right-8 text-white hover:text-blue-300"
               onClick={() => setIsMenuOpen(false)}>
               <X size={24} />
             </button>
@@ -92,6 +119,9 @@ export default function Header() {
                 )
               )}
             </nav>
+            <div className="absolute top-6 left-6">
+              <DarkModeToggle />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

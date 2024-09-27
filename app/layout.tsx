@@ -23,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={oswald.variable}>
       <body
-        className={`antialiased min-h-screen bg-gradient-to-b from-black via-blue-950 to-black text-white`}>
+        className={`flex flex-col justify-between antialiased min-h-dvh bg-gradient-to-b from-black via-blue-950 to-black text-white`}>
         <Header />
-        {children}
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
