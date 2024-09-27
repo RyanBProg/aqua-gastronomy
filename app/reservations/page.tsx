@@ -1,13 +1,13 @@
 "use client";
 
-import { FormEvent, RefObject, useRef, useState, useEffect } from "react";
+import { FormEvent, RefObject, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addMonths, isWithinInterval } from "date-fns";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
 
-export default function page() {
+export default function Page() {
   const [selectedDate, setSelectedDate] = useState<null | Date>(null);
   const [selectedTime, setSelectedTime] = useState<null | string>(null);
   const [availableTimes, setAvailableTimes] = useState<string[]>([]);

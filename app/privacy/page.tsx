@@ -65,7 +65,7 @@ export default function page() {
       </p>
 
       <h2 className="mt-6 mb-1 font-semibold">
-        7. Children's Privacy in the Aquatic Realms
+        7. Children&apos;s Privacy in the Aquatic Realms
       </h2>
       <p className="text-gray-300 max-w-[600px]">
         AquaGastronomy is not intended for guests under the age of 13. While
