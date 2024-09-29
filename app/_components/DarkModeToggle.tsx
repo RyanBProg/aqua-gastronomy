@@ -9,7 +9,7 @@ export default function DarkModeToggle() {
 
   return (
     <motion.button
-      className="dark:bg-white bg-neutral-700 p-1.5 rounded-full"
+      className="dark:bg-white bg-black p-1.5 rounded-full"
       onClick={toggleDarkMode}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}>

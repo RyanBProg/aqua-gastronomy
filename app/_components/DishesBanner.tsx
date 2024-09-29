@@ -1,9 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
-import GlassMorphCard from "./GlassMorphCard";
-import Section from "./Section";
-import { Droplet, X } from "lucide-react";
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
+import { Droplets, GlassWater, Waves, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import GlassMorphCard from "./GlassMorphCard";
 
 type SpecialtyDish = {
   name: string;
@@ -14,66 +15,65 @@ type SpecialtyDish = {
 const specialtyDishes = [
   {
     name: "Essence of Rain Puddle",
+    icon: Waves,
     desc: "Earthy and nostalgic, it offers a taste of urban sophistication",
     longDesc:
       "Collected from only the most prestigious city streets, this seasonal favorite is served with a garnish of naturally occurring leaf debris. Earthy and nostalgic, it offers a taste of urban sophistication.",
   },
   {
     name: "Toilette d'Evian",
+    icon: Droplets,
     desc: "Paired with a spritz of fresh air for a bold, refreshing experience",
     longDesc:
       "A playful twist on an essential, this carefully sourced toilet water is filtered to preserve its natural minerals while infusing it with the essence of lavender cleaning mist. Paired with a spritz of fresh air for a bold, refreshing experience.",
   },
   {
     name: "Hose Water à la Garden",
+    icon: GlassWater,
     desc: "Served with a side of fresh lawn clippings for that authentic backyard taste",
     longDesc:
       "Straight from the garden hose, this nostalgic dish is gently boiled to enhance the raw essence of rubber and grass. Served with a side of fresh lawn clippings for that authentic backyard taste.",
   },
 ];
 
-export default function SignatureCards() {
+export default function DishesBanner() {
   const [activeDish, setActiveDish] = useState<null | SpecialtyDish>(null);
 
   return (
-    <>
-      <Section className="relative">
-        <div className="container mx-auto px-4 relative">
-          <div className="mb-12">
-            <h3 className="text-4xl font-bold mb-5">
-              Discover Our Signature Dishes
-            </h3>
-            <p className="italic text-gray-300">
-              Dining at AquaGastronomy is more than just a meal—it&apos;s an
-              immersive experience.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 lg:gap-12">
-            {specialtyDishes.map((dish, index) => (
-              <GlassMorphCard
-                key={dish.name}
-                className="text-center"
-                index={index}>
-                <div className="h-40 w-40 lg:h-48 lg:w-48 mx-auto mb-6 rounded-full bg-blue-500 bg-opacity-30 flex items-center justify-center">
-                  <Droplet size={64} className="text-blue-300" />
-                </div>
-                <h4 className="text-2xl font-semibold mb-2 text-white">
+    <section className="container mx-auto px-4 relative my-60">
+      <div>
+        <div className="mb-12">
+          <h3 className="text-4xl font-bold mb-2">
+            Discover Our Signature Dishes
+          </h3>
+          <p className="italic text-gray-300">
+            Dining at AquaGastronomy is more than just a meal—it&apos;s an
+            immersive experience.
+          </p>
+        </div>
+        <div className="grid gap-10">
+          {specialtyDishes.map((dish) => (
+            <div className="flex items-center gap-6">
+              <div className="bg-black p-5 rounded-full inline-block">
+                <dish.icon size={32} />
+              </div>
+              <div className="grid">
+                <h4 className="font-semibold text-7xl tracking-tight">
                   {dish.name}
                 </h4>
-                <p className="text-gray-300">{dish.desc}</p>
-                <motion.button
-                  className="mt-4 bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-6 py-2 text-lg font-semibold"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setActiveDish(dish)}>
-                  Learn More
-                </motion.button>
-              </GlassMorphCard>
-            ))}
-          </div>
+                <p className="text-neutral-300">{dish.desc}</p>
+              </div>
+              <motion.button
+                className="bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-md px-6 py-2 text-lg font-semibold"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveDish(dish)}>
+                Learn More
+              </motion.button>
+            </div>
+          ))}
         </div>
-      </Section>
-
+      </div>
       <AnimatePresence>
         {activeDish && (
           <motion.div
@@ -93,7 +93,7 @@ export default function SignatureCards() {
               <p className="text-gray-300 mb-4">{activeDish.longDesc}</p>
               <Link href="/menu">
                 <motion.button
-                  className="bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-6 py-2 text-lg font-semibold"
+                  className="bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-md px-6 py-2 text-lg font-semibold"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}>
                   See Our Menu
@@ -103,6 +103,6 @@ export default function SignatureCards() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </section>
   );
 }

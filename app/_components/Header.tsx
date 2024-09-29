@@ -2,8 +2,6 @@
 
 import { ReactNode, useState } from "react";
 import Link from "next/link";
-import DarkModeToggle from "./DarkModeToggle";
-import { useTheme } from "../context/darkModeContext";
 
 import {
   AnimatePresence,
@@ -16,7 +14,6 @@ import { Menu, X } from "lucide-react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-  const { isDarkMode } = useTheme();
 
   return (
     <>
@@ -33,11 +30,11 @@ export default function Header() {
           {/* logo link */}
           <Link href="/">
             <motion.h1
-              className="text-black dark:text-white text-3xl font-extrabold"
+              className="text-white text-3xl font-extrabold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">
                 Aqua
               </span>
               Gastronomy
@@ -58,17 +55,8 @@ export default function Header() {
             onClick={() => setIsMenuOpen(true)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}>
-            <Menu size={24} color={isDarkMode ? "white" : "black"} />
+            <Menu size={24} color="white" />
           </motion.button>
-
-          {/* dark mode toggle */}
-          <motion.div
-            className="hidden md:block md:flex-shrink"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}>
-            <DarkModeToggle />
-          </motion.div>
         </nav>
       </motion.header>
 
@@ -76,7 +64,7 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-white dark:bg-black z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-black z-50 flex items-center justify-center"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -84,7 +72,7 @@ export default function Header() {
             <button
               className="absolute top-8 right-8 text-white hover:text-blue-300"
               onClick={() => setIsMenuOpen(false)}>
-              <X size={24} color={isDarkMode ? "white" : "black"} />
+              <X size={24} color="white" />
             </button>
             <nav className="text-center">
               <MobNavLink link="/">Home</MobNavLink>
@@ -92,9 +80,6 @@ export default function Header() {
               <MobNavLink link="/reservations">Reservations</MobNavLink>
               <MobNavLink link="/about">About</MobNavLink>
             </nav>
-            <div className="absolute top-6 left-6">
-              <DarkModeToggle />
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -111,7 +96,7 @@ function NavLink({ link, children }: TNavLink) {
   return (
     <motion.a
       href={link}
-      className="text-black dark:text-white capitalize text-lg hover:text-blue-300 transition-colors duration-300"
+      className="text-white font-normal capitalize text-lg hover:text-blue-300 transition-colors duration-300"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}>
@@ -124,7 +109,7 @@ function MobNavLink({ link, children }: TNavLink) {
   return (
     <motion.a
       href={link}
-      className="text-black dark:text-white capitalize block text-3xl mb-6 hover:text-blue-300 transition-colors duration-300"
+      className="text-white font-normal capitalize block text-3xl mb-6 hover:text-blue-300 transition-colors duration-300"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}>

@@ -1,14 +1,14 @@
 "use client";
 
 import Hero from "./_components/Hero";
-import SignatureCards from "./_components/SignatureCards";
 import EthosBanner from "./_components/EthosBanner";
+import DishesBanner from "./_components/DishesBanner";
 
 export default function page() {
   return (
     <>
       <Hero />
-      <SignatureCards />
+      <DishesBanner />
       <EthosBanner />
     </>
   );
