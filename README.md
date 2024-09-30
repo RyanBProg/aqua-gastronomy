@@ -1,6 +1,6 @@
-# Restaurant Website
+# AquaGastronomy
 
-A modern, responsive website built for a restaurant, featuring interactive forms, sleek animations, and a seamless user experience. This project is part of my portfolio, showcasing my skills with **Next.js**, **React**, **Tailwind CSS**, **TypeScript**, and **Framer Motion**.
+A modern, responsive website built for AquaGastronomy, featuring interactive forms, sleek animations, and a seamless user experience. This project is part of my portfolio, showcasing my skills with **Next.js**, **React**, **Tailwind CSS**, **TypeScript**, and **Framer Motion**.
 
 ## Features
 
@@ -25,7 +25,7 @@ To run this project locally:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/restaurant-website.git
+git clone https://github.com/RyanBProg/aqua-gastronomy.git
 
 2. Install dependencies:
 cd restaurant-website
