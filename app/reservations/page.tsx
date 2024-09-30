@@ -1,11 +1,12 @@
 "use client";
 
-import { FormEvent, RefObject, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addMonths, isWithinInterval } from "date-fns";
 import { format } from "date-fns";
 import { motion } from "framer-motion";
+import Modal from "../_components/Modal";
 
 export default function Page() {
   const [selectedDate, setSelectedDate] = useState<null | Date>(null);
@@ -43,10 +44,10 @@ export default function Page() {
 
   return (
     <div className="contentContainer my-40">
-      <h1 className="text-[6rem] text-white/20 font-bold leading-tight">
+      <h1 className="mb-10 text-5xl sm:text-[6rem] text-white/20 font-bold leading-tight">
         Reservations
       </h1>
-      <div className="font-normal container lg:max-w-[800px] bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-xl mx-auto">
+      <div className="font-normal container lg:max-w-[800px] bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-xl">
         {/* Date Picker */}
         <div className="mb-6 grid">
           <label className="text-neutral-300 mb-2">Select a Date:</label>
@@ -96,26 +97,12 @@ export default function Page() {
             )}
           </form>
         )}
-        <Modal dialogRef={dialogRef} />
+        <Modal
+          dialogRef={dialogRef}
+          title="Thanks For Your Booking"
+          body="We look forward to seeing you"
+        />
       </div>
     </div>
-  );
-}
-
-type TModal = {
-  dialogRef: RefObject<HTMLDialogElement>;
-};
-
-function Modal({ dialogRef }: TModal) {
-  return (
-    <dialog ref={dialogRef} className="rounded-lg p-10">
-      <h2 className="font-bold text-3xl mb-2">Thanks For Your Booking</h2>
-      <p className="text-neutral-700 text-lg">We look forward to seeing you</p>
-      <button
-        className="block mx-auto mt-6 bg-gradient-to-r from-blue-400 to-teal-300 text-black rounded-md px-6 py-2 text-lg font-semibold"
-        onClick={() => dialogRef.current && dialogRef.current.close()}>
-        Ok
-      </button>
-    </dialog>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Droplets, GlassWater, Waves, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import GlassMorphCard from "./GlassMorphCard";
+import TextScrollFade from "./TextScrollFade";
 
 type SpecialtyDish = {
   name: string;
@@ -40,9 +41,9 @@ export default function DishesBanner() {
   const [activeDish, setActiveDish] = useState<null | SpecialtyDish>(null);
 
   return (
-    <section className="container mx-auto px-4 relative my-60">
-      <div>
-        <div className="mb-12">
+    <section className="container mx-auto px-4 relative my-20 md:my-60">
+      <div className="mb-10">
+        <div className="mb-20">
           <h3 className="text-4xl font-bold mb-2">
             Discover Our Signature Dishes
           </h3>
@@ -51,24 +52,24 @@ export default function DishesBanner() {
             immersive experience.
           </p>
         </div>
-        <div className="grid gap-10">
+        <div className="grid gap-28 md:gap-10">
           {specialtyDishes.map((dish) => (
-            <div className="flex items-center gap-6">
-              <div className="bg-black p-5 rounded-full inline-block">
-                <dish.icon size={32} />
+            <div
+              key={dish.name}
+              className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="bg-black p-5 rounded-full w-fit mx-auto">
+                <dish.icon size={32} className="mx-auto" />
               </div>
-              <div className="grid">
-                <h4 className="font-semibold text-7xl tracking-tight">
-                  {dish.name}
-                </h4>
+              <div className="grid flex-grow">
+                <TextScrollFade value={dish.name}></TextScrollFade>
                 <p className="text-neutral-300">{dish.desc}</p>
               </div>
               <motion.button
-                className="bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-md px-6 py-2 text-lg font-semibold"
+                className="mt-2 text-nowrap bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-md px-6 py-2 text-lg font-semibold"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveDish(dish)}>
-                Learn More
+                Read More
               </motion.button>
             </div>
           ))}
